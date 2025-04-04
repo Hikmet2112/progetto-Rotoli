@@ -6,7 +6,11 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    
     extend: {
+      screens: {
+        
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
