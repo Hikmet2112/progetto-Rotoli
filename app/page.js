@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import Navbar from "./components/Navbar";
+
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

@@ -4,7 +4,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaWhatsapp } from 'reac
 export default function Footer() {
 
     return (
-        <div className=' bottom-0  w-[100%] bg-[#011F5B] py-9 '>
+        <div className=' bottom-0  w-[100%] bg-[#011F5B] py-9 z-20 '>
             
             <ul className="grid grid-flow-col grid-rows-1 grid-col-5 gap-y-7 py-2  justify-center lg:justify-evenly ">
                 <li className="flex items-center  w-full h-max">
