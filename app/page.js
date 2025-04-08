@@ -5,13 +5,15 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const bgImg = [
-  "/image/autumn.jpg",
-  "/image/italy.jpg",
-  "/image/sunset.jpg",
+const sectionsData = [
+  { id: 1, component: <Header /> },
+  { id: 2,  component: <Header /> },
+  { id: 3,  component: <Footer /> },
 ];
 
 
@@ -38,21 +40,15 @@ export default function Home() {
     },[]);
 
   return (
-    <div className="w-screen overflow-hidden">
-        {bgImg.map(( bg , index) => (
+    <div className="m'0">
+        {sectionsData.map(({ id, component }, index)=> (
         <section
-          key={index}
+          key={id}
           ref={(el) => (sectionRef.current[index] = el)}
-          className="section relative h-screen flex items-center justify-center text-white"
+          className="section"
         >
-           <Image 
-           src={bg}
-           alt={`Background ${index + 1}`}
-           layout="fill"
-            objectFit="cover"
-            className="absolute inset-0" />
-           <div className="relative z-10 bg-slate-900 p-6 rounded-md">
-            Sezione {index + 1}
+           <div className=" relative z-10 bg-slate-900">
+           {component}
             </div>
         </section>
       ))}
