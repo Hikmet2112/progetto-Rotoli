@@ -4,9 +4,10 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaWhatsapp } from 'reac
 export default function Footer() {
 
     return (
+        <>
         <div className=' z-20 bottom-0  w-[100%] bg-[#011F5B] py-9 '>
             
-            <ul className="grid grid-flow-col grid-rows-1 grid-col-5 gap-y-7 py-2  justify-center lg:justify-evenly ">
+            <ul className="grid grid-flow-col grid-rows-1 grid-col-5 gap-y-7 py-2  justify-center lg:justify-evenly lg:my-2 ">
                 <li className="flex items-center  w-full h-max">
                     <FaFacebook className='h-max w-max min-h-8 mx-2 ' />
                   
@@ -29,6 +30,10 @@ export default function Footer() {
                 </li>
             </ul>
 
+            <div className='border-b-2  mx-4  lg:mx-60'  />
+            <div></div>
+
         </div>
+        </>
     )
 }
