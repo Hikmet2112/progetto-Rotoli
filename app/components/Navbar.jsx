@@ -29,7 +29,7 @@ const Navbar = () => {
 
   return (
     <div
-          className={`gap-2 w-full z-10 ${styles.navbar} ${scrolled ? styles.scrolled : ''  }`}
+          className={`gap-2 w-full z-20 ${styles.navbar} ${scrolled ? styles.scrolled : ''  }`}
           >
       <div className='p-2'>
         <Link href="/">Logo</Link>
