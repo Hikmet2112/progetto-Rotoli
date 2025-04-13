@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 const sectionsData = [
   { id: 1, component: <Header /> },
   { id: 2,  component: <SectionOne /> },
-  { id: 3,  component: <Footer /> },
+  // { id: 3,  component: <Footer /> },
 ];
 
 

@@ -91,7 +91,7 @@ export default function Footer() {
   }, []);
     return (
       <>
-        <div className='footer-container  grid grid-cols-5 grid-rows-5 h-screen z-20 bottom-0  w-[100%] bg-[#011F5B] py-9'>    
+        <div className='footer-container  grid grid-cols-5 grid-rows-5 h-screen z-20 bottom-0  w-full bg-[#011F5B] py-9'>    
 
                 <div className="icon items-center justify-center flex flex-row w-[100%]">
                     <FaFacebook className='h-max w-max min-h-8 mx-2' /> 

@@ -2,7 +2,7 @@
 import {useEffect, useState} from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,7 +66,7 @@ return (
             </div>
           
               <div className="col-start-2 pt-20 relative left-1/3">
-              <Image src="/img/persona.png" width={300} height={500} alt='fotoProfilo'/>
+              {/* <Image src="/img/persona.png" width={300} height={500} alt='fotoProfilo'/> */}
               </div>           
                 <p className="text-left sm:px-10 p-5 row-start-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident quod reprehenderit sit natus maxime odio magnam inventore quae! Dicta, aliquid!</p>
             
