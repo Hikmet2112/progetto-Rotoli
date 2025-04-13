@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+
 gsap.registerPlugin(ScrollTrigger);
 const sectionsData = [
   { id: 1, component: <Header /> },
