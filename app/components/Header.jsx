@@ -51,7 +51,7 @@ export default function Header() {
         <div className="relative inset-0 bg-[#01102d] opacity-30 z-10 h-screen"></div>
 
        
-        <div className={`animatedDiv z-20 bg-[#011F5B] shadow-lg rounded-sm flex items-center justify-center min-w-[180px] w-4/5 h-3/5 opacity-80 absolute top-16 left-0  transition-transform duration-1000 p-6 sm:h-4/5 lg:h-screen lg:w-2/5  lg:top-0 ${animate ? "-translate-x-0" : "-translate-x-full"}`}>
+        <div className={`animatedDiv z-20 bg-gradient-to-r from-[#233c6d] to-[#03163d] shadow-lg rounded-sm flex items-center justify-center min-w-[180px] w-4/5 h-3/5 opacity-80 absolute top-16 left-0  transition-transform duration-1000 p-6 sm:h-4/5 lg:h-screen lg:w-2/5  lg:top-0 ${animate ? "-translate-x-0" : "-translate-x-full"}`}>
           <div className="text-center grid grid-flow-row">
             <h1 className={`first-letter:text-4xl first-letter:lg:text-6xl text-3xl lg:text-5xl transition-opacity duration-700 font-bold  ${opacity ? "opacity-100" : "opacity-0"}`}>A  V  V  O  C  A  T  O</h1>
             <h2 className={`tracking-tighter first-letter:lg:text-6xl first-letter:text-4xl text-3xl lg:text-5xl transition-opacity duration-700  ${opacity ? "opacity-100" : "opacity-0"}`}>D O M E N I C O</h2>
