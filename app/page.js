@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 const sectionsData = [
   { id: 1, component: <Header /> },
   { id: 2,  component: <SectionOne /> },
-  // { id: 3,  component: <Footer /> },
+  { id: 3,  component: <Footer /> },
 ];
 
 
@@ -47,7 +47,7 @@ export default function Home() {
           className="section"
         >
          
-         <div className=" relative z-10 bg-[#011F5B]">
+         <div className=" relative z-10 bg-[#011F5B] overflow-x-hidden">
         
           {component}
           </div>

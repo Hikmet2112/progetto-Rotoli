@@ -86,14 +86,21 @@ export default function Footer() {
                    <FaWhatsapp className='h-max w-max min-h-8 mx-2'/> 
                    <p className='px-3'>NomeProfilo</p>  
                 </div>
-                
-                    <div className='items-center div-bio col-start-3 col-span-3 row-span-3 row-start-2 opacity-0 visibility-hidden '>
-                      <div className="rounded-full h-[350px] w-[350px] overflow-hidden">
+
+                <div className=' div-bio relative col-start-3 col-span-3 row-span-3 row-start-2 overflow-x-hidden'>
+                    {/* <div className='div-bio  absolute inset-0 bg-[url("/img/library.jpg")] bg-cover blur-sm col-start-3 col-span-3 row-span-3 row-start-2'></div>
+                    <div className='div-bio z-20 relative flex flex-col items-center justify-center h-full w-ful'>
+                    <div className="div-bio rounded-full h-[350px] w-[350px] overflow-hidden">
                         <Image className=' bg-cover' src="/img/persona.png" width={400} height={400} alt='fotoProfilo'/>
-                      </div>           
+                    </div>
+                    <div className='bg-white'>
                         <p className="text-left sm:px-10 p-5 row-start-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident quod reprehenderit sit natus maxime odio magnam inventore quae! Dicta, aliquid!</p>
-                    
+                    </div>           
+
+                    </div> */}
                 </div>
+                    
+               
         </div>
         </>
     )
