@@ -64,42 +64,28 @@ export default function Footer() {
  
     return (
       <>
-        <div className='footer-container  grid grid-cols-5 grid-rows-5 h-screen z-20 bottom-0  w-[100%] bg-[#011F5B]'>    
+        <div className='footer-container  grid grid-cols-5 grid-rows-5 h-screen z-20 bottom-0  w-[100%] items-center  '>    
 
-                <div className=" icon  items-center justify-center flex flex-row w-[100%]">
-                    <FaFacebook className='h-max w-max min-h-8 mx-2' /> 
-                    <p className='px-3'>NomeProfilo</p>
+                <div className=" icon flex items-center justify-center lg:flex lg:flex-row  ">
+                    <FaFacebook className='h-max w-max min-h-8 mx-2 ' /> 
+                    <p className='hidden lg:block px-3'>NomeProfilo</p>
                 </div>
-                <div className="icon items-center justify-center flex flex-row w-[100%]">
+                <div className="icon flex items-center justify-center  lg:flex lg:flex-row  ">
                     <FaTwitter className='h-max w-max min-h-8 mx-2'/>
-                    <p className='px-3'>NomeProfilo</p>
+                    <p className='hidden lg:block px-3'>NomeProfilo</p>
                 </div>
-                <div className="icon icon1 items-center justify-center flex flex-row w-[100%]">
+                <div className="icon flex items-center justify-center  lg:flex lg:flex-row ">
                     <FaInstagram className='h-max w-max min-h-8 mx-2' />
-                   <p className='px-3'>NomeProfilo</p>
+                   <p className='hidden lg:block px-3'>NomeProfilo</p>
                 </div>
-                <div className="icon items-center justify-center flex flex-row w-[100%]">
+                <div className="icon flex items-center justify-center  lg:flex lg:flex-row ">
                     <FaLinkedin className='h-max w-max min-h-8 mx-2' />
-                    <p className='px-3'>NomeProfilo</p>
+                    <p className='hidden lg:block px-3'>NomeProfilo</p>
                 </div>
-                <div className="icon  items-center justify-center flex flex-row w-[100%]">
+                <div className="icon flex items-center justify-center  lg:flex lg:flex-row ">
                    <FaWhatsapp className='h-max w-max min-h-8 mx-2'/> 
-                   <p className='px-3'>NomeProfilo</p>  
-                </div>
-
-                <div className=' div-bio relative col-start-3 col-span-3 row-span-3 row-start-2 overflow-x-hidden'>
-                    {/* <div className='div-bio  absolute inset-0 bg-[url("/img/library.jpg")] bg-cover blur-sm col-start-3 col-span-3 row-span-3 row-start-2'></div>
-                    <div className='div-bio z-20 relative flex flex-col items-center justify-center h-full w-ful'>
-                    <div className="div-bio rounded-full h-[350px] w-[350px] overflow-hidden">
-                        <Image className=' bg-cover' src="/img/persona.png" width={400} height={400} alt='fotoProfilo'/>
-                    </div>
-                    <div className='bg-white'>
-                        <p className="text-left sm:px-10 p-5 row-start-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident quod reprehenderit sit natus maxime odio magnam inventore quae! Dicta, aliquid!</p>
-                    </div>           
-
-                    </div> */}
-                </div>
-                    
+                   <p className='hidden lg:block px-3'>NomeProfilo</p>  
+                </div>      
                
         </div>
         </>

@@ -47,7 +47,7 @@ export default function Home() {
           className="section"
         >
          
-         <div className=" relative z-10 bg-[#011F5B] overflow-x-hidden">
+         <div className=" relative z-10  bg-[#0e1c38] overflow-x-hidden">
         
           {component}
           </div>

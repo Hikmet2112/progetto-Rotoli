@@ -9,17 +9,29 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false); // menu tendina
   const [scrolled, setScrolled] = useState(false);
   const prevScrollPos = useRef(0);
+   const savedScrollY = useRef(0);
 
   useEffect(() => {
     if (menuOpen) {
-      document.body.style.overflow = 'hidden'; // Blocca lo scroll
+      // Salva la posizione corrente dello scroll
+      savedScrollY.current = window.scrollY;
+      // Blocca la pagina fissando il body
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${savedScrollY.current}px`;
     } else {
-      document.body.style.overflow = ''; // Ripristina lo scroll
+      // Ripristina lo scroll
+      document.body.style.position = '';
+      document.body.style.top = '';
+      window.scrollTo(0, savedScrollY.current);
     }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [menuOpen]);
+  
+  return () => {
+    // Assicurati di ripristinare gli stili in fase di cleanup
+    document.body.style.position = '';
+    document.body.style.top = '';
+  };
+}, [menuOpen]);
+
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -95,7 +107,7 @@ const Navbar = () => {
 
       {/* Menù mobile */}
       <div className={`md:hidden grid grid-rows-10 grid-cols-3 fixed top-0 right-0 w-[90%] h-full p-5 
-        bg-gradient-to-b from-[#233a6a] to-[#09193a] transform transition-all duration-700 z-40
+        bg-gradient-to-b from-[#233a6a] to-[#09193a]  duration-700 z-40
         ${menuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}>
         <Link href="/" className="px-2 row-start-2 flex items-center gap-2">
           <FaHome size={30} color="#D2B896" className="min-w-[30px] min-h-[30px]" /> 
