@@ -3,7 +3,8 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaWhatsapp } from 'reac
 import {useState,useEffect} from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
+import Link from 'next/link';
+
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -51,11 +52,7 @@ export default function Footer() {
           }
         );
           // Animazione aggiuntiva: Comparsa del div con l'immagine
-      tlEnter.fromTo(
-        divBio,
-        { opacity: 0, visibility: "hidden", y: 50 },
-        { opacity: 1, visibility: "visible", y: 0, duration: 0.5, ease: "power1.out" }
-      );
+   
     });
   });
 }, []);
@@ -64,26 +61,31 @@ export default function Footer() {
       <>
         <div className='footer-container grid grid-cols-5 grid-rows-5 h-screen z-20 w-[100%] items-center  '>    
 
-                <div className=" icon flex items-center justify-center lg:flex lg:flex-row  ">
-                    <FaFacebook className='h-max w-max min-h-8 mx-2 ' /> 
-                    <p className='hidden lg:block px-3'>NomeProfilo</p>
-                </div>
-                <div className="icon flex items-center justify-center  lg:flex lg:flex-row  ">
-                    <FaTwitter className='h-max w-max min-h-8 mx-2'/>
-                    <p className='hidden lg:block px-3'>NomeProfilo</p>
-                </div>
-                <div className="icon flex items-center justify-center  lg:flex lg:flex-row ">
-                    <FaInstagram className='h-max w-max min-h-8 mx-2' />
-                   <p className='hidden lg:block px-3'>NomeProfilo</p>
-                </div>
-                <div className="icon flex items-center justify-center  lg:flex lg:flex-row ">
-                    <FaLinkedin className='h-max w-max min-h-8 mx-2' />
-                    <p className='hidden lg:block px-3'>NomeProfilo</p>
-                </div>
-                <div className="icon flex items-center justify-center  lg:flex lg:flex-row ">
-                   <FaWhatsapp className='h-max w-max min-h-8 mx-2'/> 
-                   <p className='hidden lg:block px-3'>NomeProfilo</p>  
-                </div>      
+                <Link href="/about" className=" icon flex items-center justify-center lg:flex lg:flex-row  ">
+                  
+                      <FaFacebook className='h-max w-max min-h-8 mx-2 ' /> 
+                      <p className='hidden lg:block px-3'>Domenico Rotoli</p>
+                  
+                </Link>
+                <Link href="/about" className=" icon flex items-center justify-center lg:flex lg:flex-row  ">
+                  
+                      <FaTwitter className='h-max w-max min-h-8 mx-2 ' /> 
+                      <p className='hidden lg:block px-3'>Domenico Rotoli</p>
+                  
+                </Link>
+                <Link href="/about" className=" icon flex items-center justify-center lg:flex lg:flex-row  ">
+                  
+                      <FaInstagram className='h-max w-max min-h-8 mx-2 ' /> 
+                      <p className='hidden lg:block px-3'>Domenico Rotoli</p>
+                  
+                </Link>
+                <Link href="/about" className=" icon flex items-center justify-center lg:flex lg:flex-row  ">
+                  
+                      <FaWhatsapp className='h-max w-max min-h-8 mx-2 ' /> 
+                      <p className='hidden lg:block px-3'>Domenico Rotoli</p>
+                  
+                </Link>
+        
                
         </div>
         </>

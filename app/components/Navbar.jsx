@@ -67,11 +67,7 @@ const Navbar = () => {
     <div className={`grid grid-flow-col w-full z-20 ${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       {/* Navbar per desktop */}
       <div className="hidden shadow-md md:grid w-full grid-cols-10 p-2 gap-2 lg:ml-8">
-        <div className="col-start-1 items-center justify-center">
-          <Link href="/" className="text-[#213968] text-center ">
-            <FaHome size={30} />
-          </Link>
-        </div>
+        
         <div className="col-start-2 items-center justify-center">
           <Link href="/about" className="text-[#213968] text-center ">
             <FaInfoCircle size={30} />
@@ -109,10 +105,7 @@ const Navbar = () => {
       <div className={`md:hidden grid grid-rows-10 grid-cols-3 fixed top-0 right-0 w-[90%] h-full p-5 
         bg-gradient-to-b from-[#233a6a] to-[#09193a]  duration-700 z-40
         ${menuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}>
-        <Link href="/" className="px-2 row-start-2 flex items-center gap-2">
-          <FaHome size={30} color="#D2B896" className="min-w-[30px] min-h-[30px]" /> 
-          <span className="text-white">Home</span>
-        </Link>
+      
         <Link href="/about" className="px-2 row-start-4 flex items-center gap-2">
           <FaInfoCircle size={30} color="#D2B896" className="min-w-[30px] min-h-[30px]" /> 
           <span className="text-white">About</span>
