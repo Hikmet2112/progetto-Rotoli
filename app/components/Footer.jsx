@@ -64,7 +64,7 @@ export default function Footer() {
  
     return (
       <>
-        <div className='footer-container  grid grid-cols-5 grid-rows-5 h-screen z-20 bottom-0  w-[100%] items-center  '>    
+        <div className='footer-container grid grid-cols-5 grid-rows-5 h-screen z-20 w-[100%] items-center  '>    
 
                 <div className=" icon flex items-center justify-center lg:flex lg:flex-row  ">
                     <FaFacebook className='h-max w-max min-h-8 mx-2 ' /> 

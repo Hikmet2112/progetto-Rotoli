@@ -133,7 +133,7 @@ return (
 
         <div className="w-full h-screen overflow-x-hidden">
 
-          <div className="h-full sm:w-2/5 bg-slate-600">
+          <div className="h-full sm:w-2/5 bg-[#571212]">
 
              <div className="p-5">
                 <h1 className="text-start">Ambiti</h1>
