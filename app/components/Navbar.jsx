@@ -8,7 +8,7 @@ import { FaHome, FaInfoCircle, FaServicestack, FaEnvelope } from "react-icons/fa
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false); // menu tendina
   const [scrolled, setScrolled] = useState(false);
-  const prevScrollPos = useRef(0); // Inizializza con 0 per evitare accesso a window
+  const prevScrollPos = useRef(0);
 
   useEffect(() => {
     if (menuOpen) {
@@ -16,36 +16,29 @@ const Navbar = () => {
     } else {
       document.body.style.overflow = ''; // Ripristina lo scroll
     }
-
     return () => {
-      document.body.style.overflow = ''; // Ripristina lo scroll quando il componente viene smontato
+      document.body.style.overflow = '';
     };
   }, [menuOpen]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      prevScrollPos.current = window.scrollY; // Imposta il valore iniziale
-
+      prevScrollPos.current = window.scrollY;
       const handleScroll = () => {
         const currentScrollPos = window.scrollY;
-
         if (currentScrollPos < prevScrollPos.current) {
           setScrolled(false);
         } else if (currentScrollPos > prevScrollPos.current && currentScrollPos > 50) {
           setScrolled(true);
         }
-
         prevScrollPos.current = currentScrollPos;
       };
-
       window.addEventListener("scroll", handleScroll);
-
       return () => window.removeEventListener("scroll", handleScroll);
     }
   }, []);
 
   const handleOutsideClick = (event) => {
-    // Controlla se il click è avvenuto fuori dalla navbar
     if (menuOpen && !event.target.closest(`.${styles.navbar}`)) {
       setMenuOpen(false);
     }
@@ -53,60 +46,73 @@ const Navbar = () => {
 
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick);
-
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
   }, [menuOpen]);
 
   return (
-    <div className={`grid grid-flow-col  w-full z-20 ${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
-   
-
-      <div className="hidden md:grid w-full grid-cols-8  p-2 gap-2 ">
-        <div className="flex flex-col items-center justify-center">
-          <Link href="/" className="text-white text-center ">
+    <div className={`grid grid-flow-col w-full z-20 ${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+      {/* Navbar per desktop */}
+      <div className="hidden shadow-md md:grid w-full grid-cols-10 p-2 gap-2 lg:ml-8">
+        <div className="col-start-1 items-center justify-center">
+          <Link href="/" className="text-[#213968] text-center ">
             <FaHome size={30} />
-            
           </Link>
         </div>
-        <div className="flex flex-col items-center justify-center">
-          <Link href="/about" className="text-white text-center ">
+        <div className="col-start-2 items-center justify-center">
+          <Link href="/about" className="text-[#213968] text-center ">
             <FaInfoCircle size={30} />
-            
           </Link>
         </div>
-        <div className="flex flex-col items-center justify-center">
-          <Link href="/services" className="text-white text-center ">
+        <div className="col-start-3 items-center justify-center">
+          <Link href="/services" className="text-[#213968] text-center ">
             <FaServicestack size={30} />
-            
           </Link>
         </div>
-        <div className="flex flex-col items-center justify-center">
-          <Link href="/contact" className="text-white text-center ">
+        <div className="col-start-4 items-center justify-center">
+          <Link href="/contact" className="text-[#213968] text-center ">
             <FaEnvelope size={30} />
-            
           </Link>
         </div>
-        <div className="flex flex-col items-center justify-center">
-         
-        </div>
-      
       </div>
 
-
-      {/* Menu mobile */}
+      {/* Bottone per il menu mobile - aumenta il valore z-index (qui z-50) */}
       <button
-        className={` md:hidden fixed top-0 right-2 z-10 text-3xl transition-opacity duration-300`}
+        className="sm:hidden fixed top-0 right-2 m-2 z-50 text-3xl transition-opacity duration-300"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         {menuOpen ? '✖' : '☰'}
       </button>
-      <div className={`md:hidden grid grid-rows-10 fixed top-0 right-0 w-[80%] h-full p-5 text-slate-800 bg-slate-50 transform transition-all duration-700 ${menuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
-        <Link href="/" className="p-2 row-start-3"> <FaHome size={30} color="red" />Home</Link>
-        <Link href="/about" className="p-2 row-start-4"> <FaInfoCircle size={30} color="red" />About</Link>
-        <Link href="/services" className="p-2 row-start-5"> <FaServicestack size={30} color="red" />Services</Link>
-        <Link href="/contact" className="p-2 row-start-6"> <FaEnvelope size={30} color="red" />Contact</Link>
+
+      {/* Overlay che sfoca il resto della pagina */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-20 backdrop-blur-sm z-30 transition duration-700"
+          onClick={() => setMenuOpen(false)}
+        ></div>
+      )}
+
+      {/* Menù mobile */}
+      <div className={`md:hidden grid grid-rows-10 grid-cols-3 fixed top-0 right-0 w-[90%] h-full p-5 
+        bg-gradient-to-b from-[#233a6a] to-[#09193a] transform transition-all duration-700 z-40
+        ${menuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}>
+        <Link href="/" className="px-2 row-start-2 flex items-center gap-2">
+          <FaHome size={30} color="#D2B896" className="min-w-[30px] min-h-[30px]" /> 
+          <span className="text-white">Home</span>
+        </Link>
+        <Link href="/about" className="px-2 row-start-4 flex items-center gap-2">
+          <FaInfoCircle size={30} color="#D2B896" className="min-w-[30px] min-h-[30px]" /> 
+          <span className="text-white">About</span>
+        </Link>
+        <Link href="/services" className="px-2 row-start-6 flex items-center gap-2">
+          <FaServicestack size={30} color="#D2B896" className="min-w-[30px] min-h-[30px]" /> 
+          <span className="text-white">Services</span>
+        </Link>
+        <Link href="/contact" className="p-2 row-start-8 flex items-center gap-2">
+          <FaEnvelope size={30} color="#D2B896" className="min-w-[30px] min-h-[30px]" /> 
+          <span className="text-white">Contact</span>
+        </Link>
       </div>
     </div>
   );
