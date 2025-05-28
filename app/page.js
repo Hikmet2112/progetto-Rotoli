@@ -23,22 +23,22 @@ export default function Home() {
  
 
   useEffect(() => {
-   // 🔥 Seleziona tutti gli elementi <section> e applica le animazioni
+   //  Seleziona tutti gli elementi <section> e applica le animazioni
    gsap.utils.toArray(".section").forEach((section, i) => {
     // Primo ScrollTrigger: Mantiene fissa l'immagine della sezione
     ScrollTrigger.create({
       trigger: section,
       start: "top top", // La sezione si blocca quando entra in viewport
       scrub: 1,
-      pin: true, // 🔥 Fissa la sezione fino a quando la nuova la sovrappone
-      pinSpacing: false // 🚀 Rimuove lo spazio extra che potrebbe causare problemi
+      pin: true, // Fissa la sezione fino a quando la nuova la sovrappone
+      pinSpacing: false, //  Rimuove lo spazio extra che potrebbe causare problemi
     });
     }
     );
     },[]);
 
   return (
-    <div className="m'0">
+    <div className="m-0 p-0">
       <Navbar/>
         {sectionsData.map(({ id, component }, index)=> (
         <section
@@ -47,7 +47,7 @@ export default function Home() {
           className="section"
         >
          
-         <div className=" relative z-10 bg-[#011F5B] overflow-x-hidden">
+         <div className=" relative z-10 bg-[#011F5B]">
         
           {component}
           </div>

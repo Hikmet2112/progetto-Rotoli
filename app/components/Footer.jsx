@@ -26,8 +26,6 @@ export default function Footer() {
             
            toggleActions: "play reset play reverse", // Solo "play" per lo scroll verso il basso
            scrube:false,
-           markers:true,
-            
           },
         });
         tlEnter.fromTo(
