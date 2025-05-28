@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import ScrollTrigger
 
-
 gsap.registerPlugin(ScrollTrigger); // Registra ScrollTrigger
+ScrollTrigger.defaults({ markers: false });
 
 export default function Header() {
   const [animate, setAnimate] = useState(false);
@@ -26,6 +26,7 @@ export default function Header() {
             start: "top center",
             end: "center center",
             scrub: true,
+            markers: false 
           },
         }
       );
