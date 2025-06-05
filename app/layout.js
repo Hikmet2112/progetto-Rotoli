@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import GoUpButton from "./components/GoUpButton";
 
 
 
@@ -24,12 +25,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  relative min-h-screen`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  relative min-h-screen`}>
       
         {children}
         
-    
+        
+         <GoUpButton/>
       </body>
     </html>
   );

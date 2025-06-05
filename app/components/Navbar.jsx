@@ -11,26 +11,23 @@ const Navbar = () => {
   const prevScrollPos = useRef(0);
    const savedScrollY = useRef(0);
 
-  useEffect(() => {
-    if (menuOpen) {
-      // Salva la posizione corrente dello scroll
-      savedScrollY.current = window.scrollY;
-      // Blocca la pagina fissando il body
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${savedScrollY.current}px`;
-    } else {
-      // Ripristina lo scroll
+ useEffect(() => {
+  if (menuOpen) {
+    // Salva e blocca lo scroll
+    savedScrollY.current = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY.current}px`;
+  } else {
+    // Ritarda il reset degli stili per attendere il completamento dell'animazione
+    const timer = setTimeout(() => {
       document.body.style.position = '';
       document.body.style.top = '';
       window.scrollTo(0, savedScrollY.current);
-    }
-  
-  return () => {
-    // Assicurati di ripristinare gli stili in fase di cleanup
-    document.body.style.position = '';
-    document.body.style.top = '';
-  };
+    }, 700); // Assicurati che questo valore corrisponda alla durata dell'animazione
+    return () => clearTimeout(timer);
+  }
 }, [menuOpen]);
+
 
 
   useEffect(() => {
