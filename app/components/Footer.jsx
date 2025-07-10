@@ -64,27 +64,27 @@ export default function Footer() {
   return (
     
 
-    <footer className='footer-container grid grid-cols-5 grid-rows-5 h-screen z-20 w-[100%] items-end  bg-gradient-to-b from-[#233a6a] to-[#050f21]'>
+    <footer className='footer-container flex-col md:grid md:grid-cols-5 md:grid-rows-5 h-screen z-20 w-[100%] justify-items-start pt-2   lg:items-start lg:pt-6  bg-[url(/img/footerLargo.png)] bg-no-repeat bg-cover bg-center'>
 
-      <Link href="https://www.facebook.com/domenico.rotoli" className=" icon flex   lg:flex lg:flex-row h-max w-max min-h-8 mx-4 ">
+      <Link href="https://www.facebook.com/domenico.rotoli" className=" icon flex   lg:flex lg:flex-row h-max w-max min-h-8 mx-4 mb-2 ">
 
         <FaFacebook className='h-max w-max min-h-8  shadow-inner' />
         <p className='hidden lg:block px-3'>Domenico Rotoli</p>
 
       </Link>
-      <Link href="/about" className=" icon flex   lg:flex lg:flex-row h-max w-max min-h-8 mx-4 ">
+      <Link href="/about" className=" icon flex   lg:flex lg:flex-row h-max w-max min-h-8 mx-4 mb-2">
 
         <FaEnvelope className='h-max w-max min-h-8  shadow-inner' />
         <p className='hidden lg:block px-3'>domenicorotoli@example.com</p>
 
       </Link>
-      <Link href="https://www.instagram.com/domenicorotoli/" className=" icon flex   lg:flex lg:flex-row h-max w-max min-h-8 mx-4 ">
+      <Link href="https://www.instagram.com/domenicorotoli/" className=" icon flex   lg:flex lg:flex-row h-max w-max min-h-8 mx-4 mb-2">
 
         <FaInstagram className='h-max w-max min-h-8  shadow-inner' />
         <p className='hidden lg:block px-3'>domenicorotoli</p>
 
       </Link>
-      <div href="/about" className=" icon flex   lg:flex lg:flex-row h-max w-max min-h-8 mx-4 ">
+      <div href="/about" className=" icon flex   lg:flex lg:flex-row h-max w-max min-h-8 mx-4 mb-2">
 
         <FaWhatsapp className='h-max w-max min-h-8  shadow-inner' />
         <p className='hidden lg:block px-3'> +39 389 788 7196</p>
@@ -98,7 +98,11 @@ export default function Footer() {
 
       </Link>
 
-      <img width={'80%'} src="/img/icona.svg" alt="icona" className='md:hidden rounded-full absolute justify-self-center mb-2  opacity-20' />
+
+
+      <img width={'80%'} src="/img/icona.svg" alt="icona" className='md:hidden rounded-full absolute right-10 bottom-30  opacity-20' />
+      
+      
 
       
     </footer>
